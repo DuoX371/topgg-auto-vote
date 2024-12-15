@@ -20,7 +20,7 @@ if (!config.id || !config.token) {
     await page.goto(config.discordUrl);
 
     console.log("Authorizing discord");
-    await page.evaluate((data) => {
+    await page.evaluate((data: { token: string, id: string }) => {
         // Setting token in local storage
         const iframe = document.body.appendChild(document.createElement('iframe'));
 
